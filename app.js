@@ -13,20 +13,57 @@ var winningRows = [1, 2, 3];
 
 var placeXorO = function(event) {
     if (turnCount == 0) {
-        event.target.textContent = "X";
+        
+        event.target.classList.add('background');
+
+        var helmetDiv = document.createElement("div");
+        event.target.appendChild(helmetDiv);
+        helmetDiv.classList.add('helmet');
+
+        var screenDiv = document.createElement('div');
+        helmetDiv.appendChild(screenDiv);
+        screenDiv.classList.add('screen');
+
+        var shouldersDiv = document.createElement('div');
+        event.target.appendChild(shouldersDiv);
+        shouldersDiv.classList.add('shoulders');
+
+        var neckDiv = document.createElement('div');
+        shouldersDiv.appendChild(neckDiv);
+        neckDiv.classList.add('neck');
+
         turnCount += 1;
         console.log(event.target.id);
         xPositionNumbers.push(event.target.id);
         console.log(xPositionNumbers);
 
     } else if (turnCount % 2 !== 0) {
-        event.target.textContent = "O";
+        // event.target.textContent = "O";
+        event.target.classList.add('cross');
+        
         turnCount += 1;
         console.log(event.target.id);
         oPositionNumbers.push(event.target.id);
         console.log(oPositionNumbers);
     } else {
-        event.target.textContent = "X";
+        event.target.classList.add('background');
+
+        var helmetDiv = document.createElement("div");
+        event.target.appendChild(helmetDiv);
+        helmetDiv.classList.add('helmet');
+
+        var screenDiv = document.createElement('div');
+        helmetDiv.appendChild(screenDiv);
+        screenDiv.classList.add('screen');
+
+        var shouldersDiv = document.createElement('div');
+        event.target.appendChild(shouldersDiv);
+        shouldersDiv.classList.add('shoulders');
+
+        var neckDiv = document.createElement('div');
+        shouldersDiv.appendChild(neckDiv);
+        neckDiv.classList.add('neck');
+
         turnCount += 1;
         console.log(event.target.id);
         xPositionNumbers.push(event.target.id);
