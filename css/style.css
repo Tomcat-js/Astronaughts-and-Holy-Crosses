@@ -68,7 +68,7 @@ h1 {
     margin: 0 auto;
     height: 70px;
     width: 80px;
-    border-radius: 50%;
+    border-radius: 45%;
     background: rgba(92,92,92,1);
     background: linear-gradient(to bottom, rgba(92,92,92,1) 0%, rgba(107,107,107,1) 12%, rgba(122,122,122,1) 25%, rgba(87,87,87,1) 39%, rgba(51,51,51,1) 50%, rgba(0,0,0,1) 51%, rgba(20,20,20,1) 60%, rgba(49,49,49,1) 75%, rgba(51,51,51,1) 76%, rgba(33,33,33,1) 91%, rgba(20,20,20,1) 100%);
 }

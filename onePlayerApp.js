@@ -29,9 +29,10 @@ var gameOver = function() {
 }
 
 
+
+
 var firstTurnScience = function(event) {
 
-    if (turnCount == 0) {
         
         event.target.classList.add('background');
 
@@ -56,40 +57,37 @@ var firstTurnScience = function(event) {
         xPositionNumbers.push(event.target.id);
         console.log(xPositionNumbers);
 
-    } else if (turnCount % 2 !== 0) {
-    
-        event.target.classList.add('fire');    
-        event.target.innerHTML = "&#10015";
-        
+        aiTargetArray = [];
+
+
+        for (var i = 0; i < squares.length; i++) {
+            if (squares[i].className === 'square') {
+                var aiTarget = squares[i].id;
+                aiTargetArray.push(aiTarget);
+                
+            }
+        }
+
+        // console.log(aiTargetArray);
+
+        var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
+
+        // console.log(typeof randomTarget);
+        if (turnCount < 9) {
+        document.getElementById(randomTarget).classList.add('fire');
+        document.getElementById(randomTarget).innerHTML = "&#10015";
+
         turnCount += 1;
-        console.log(event.target.id);
-        oPositionNumbers.push(event.target.id);
+
+        console.log(turnCount);
+
+        
+
+        oPositionNumbers.push(randomTarget);
+
         console.log(oPositionNumbers);
-        
-    } else {
-        event.target.classList.add('background');
+        }
 
-        var helmetDiv = document.createElement("div");
-        event.target.appendChild(helmetDiv);
-        helmetDiv.classList.add('helmet');
-
-        var screenDiv = document.createElement('div');
-        helmetDiv.appendChild(screenDiv);
-        screenDiv.classList.add('screen');
-
-        var shouldersDiv = document.createElement('div');
-        event.target.appendChild(shouldersDiv);
-        shouldersDiv.classList.add('shoulders');
-
-        var neckDiv = document.createElement('div');
-        shouldersDiv.appendChild(neckDiv);
-        neckDiv.classList.add('neck');
-
-        turnCount += 1;
-        console.log(event.target.id);
-        xPositionNumbers.push(event.target.id);
-        console.log(xPositionNumbers);
-    }
 
     if (xPositionNumbers.includes("1") && xPositionNumbers.includes("2") && xPositionNumbers.includes("3")
     ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("4") && xPositionNumbers.includes("7")
@@ -135,7 +133,7 @@ var firstTurnScience = function(event) {
 
 var firstTurnReligion = function(event) {
 
-    if (turnCount == 0) {
+    
 
         event.target.classList.add('fire');    
         event.target.innerHTML = "&#10015";
@@ -144,14 +142,30 @@ var firstTurnReligion = function(event) {
         console.log(event.target.id);
         oPositionNumbers.push(event.target.id);
         console.log(oPositionNumbers);
-        
 
-    } else if (turnCount % 2 !== 0) {
 
-        event.target.classList.add('background');
+        aiTargetArray = [];
+
+
+        for (var i = 0; i < squares.length; i++) {
+            if (squares[i].className === 'square') {
+                var aiTarget = squares[i].id;
+                aiTargetArray.push(aiTarget);
+                
+            }
+        }
+
+        // console.log(aiTargetArray);
+
+        var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
+
+        // console.log(typeof randomTarget);
+        if (turnCount < 9) {
+        document.getElementById(randomTarget).classList.add('background');
+       
 
         var helmetDiv = document.createElement("div");
-        event.target.appendChild(helmetDiv);
+        document.getElementById(randomTarget).appendChild(helmetDiv);
         helmetDiv.classList.add('helmet');
 
         var screenDiv = document.createElement('div');
@@ -159,7 +173,7 @@ var firstTurnReligion = function(event) {
         screenDiv.classList.add('screen');
 
         var shouldersDiv = document.createElement('div');
-        event.target.appendChild(shouldersDiv);
+        document.getElementById(randomTarget).appendChild(shouldersDiv);
         shouldersDiv.classList.add('shoulders');
 
         var neckDiv = document.createElement('div');
@@ -167,21 +181,19 @@ var firstTurnReligion = function(event) {
         neckDiv.classList.add('neck');
 
         turnCount += 1;
-        console.log(event.target.id);
-        xPositionNumbers.push(event.target.id);
-        console.log(xPositionNumbers);
-        
-        
-    } else {
 
-        event.target.classList.add('fire');    
-        event.target.innerHTML = "&#10015";
+        console.log(turnCount);
+
         
-        turnCount += 1;
-        console.log(event.target.id);
-        oPositionNumbers.push(event.target.id);
+
+        xPositionNumbers.push(randomTarget);
+
         console.log(oPositionNumbers);
-    }
+        }
+        
+
+    
+
 
     if (xPositionNumbers.includes("1") && xPositionNumbers.includes("2") && xPositionNumbers.includes("3")
     ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("4") && xPositionNumbers.includes("7")
@@ -271,3 +283,15 @@ religionButton.addEventListener('click', playForReligion);
 // }
 
 // console.log(testArray1.join(''));
+
+// var randomNum = console.log(Math.floor(Math.random() * 9));
+
+// var stringNum = '' + randomNum;
+
+// console.log(stringNum);
+
+// var randomNum = Math.ceil(Math.random() * 9);
+
+// console.log(randomNum);
+
+
