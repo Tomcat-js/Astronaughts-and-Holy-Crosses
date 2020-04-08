@@ -9,10 +9,12 @@
     padding-top: 20px;
 }
 
+
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 300px; 
+    width: 25%; 
     margin: 0 auto;
     text-align: center;
     font-size: 100px;
@@ -76,16 +78,38 @@ h1 {
    
 }
 
-.wrapper {
-    padding-top: 200px;
+@media (max-width: 1200px) {
+    .wrapper {
+        border: 2px solid black;
+        padding-right: 300px;
+    }
 
+    header {
+        padding-left: 50%;
+    }
+    
 }
+
+
 
 .winner-text {
 
 }
 
+header {
+    text-align: center;
+}
+
 button {
-    width: 100px;
-    height: 100px
+    width: 80px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.pick-a-side {
+    
+}
+
+.un-clickable {
+    pointer-events: none;
 }

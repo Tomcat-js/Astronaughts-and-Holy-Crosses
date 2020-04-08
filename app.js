@@ -14,6 +14,16 @@ var oPositionNumbers = [];
 
 var winningRows = [1, 2, 3];
 
+var gameOver = function() {
+    for (var i = 0; i < squares.length; i++) {
+        if (squares[i].className !== "fire" || squares[i].className !== "background") {
+            squares[i].style.backgroundColor = "lightgrey";
+            squares[i].classList.add('un-clickable');
+        }
+    }
+}
+
+
 var firstTurnScience = function(event) {
 
     if (turnCount == 0) {
@@ -85,10 +95,15 @@ var firstTurnScience = function(event) {
     ||  xPositionNumbers.includes("2") && xPositionNumbers.includes("5") && xPositionNumbers.includes("8")  
     ||  xPositionNumbers.includes("9") && xPositionNumbers.includes("6") && xPositionNumbers.includes("3")) {
 
-    // console.log("X WINS!!!!!!");
-    document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
+    
+    gameOver();
 
-    // var scienceWins = document.querySelector('.winner-text').classList.add()
+    var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
+
+    return scienceWins;
+    
+
+    
 
     } else if 
 
@@ -101,7 +116,13 @@ var firstTurnScience = function(event) {
     ||  oPositionNumbers.includes("2") && oPositionNumbers.includes("5") && oPositionNumbers.includes("8")  
     ||  oPositionNumbers.includes("9") && oPositionNumbers.includes("6") && oPositionNumbers.includes("3")) {
 
-        console.log("O WINS!!!!!");
+    gameOver();   
+
+    var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
+    
+    return religionWins;
+    
+    
     }
         
     
@@ -166,10 +187,13 @@ var firstTurnReligion = function(event) {
     ||  xPositionNumbers.includes("2") && xPositionNumbers.includes("5") && xPositionNumbers.includes("8")  
     ||  xPositionNumbers.includes("9") && xPositionNumbers.includes("6") && xPositionNumbers.includes("3")) {
 
-    // console.log("X WINS!!!!!!");
-    document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
+    gameOver();
 
-    // var scienceWins = document.querySelector('.winner-text').classList.add()
+    var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
+
+    return scienceWins;
+   
+
 
     } else if 
 
@@ -182,9 +206,13 @@ var firstTurnReligion = function(event) {
     ||  oPositionNumbers.includes("2") && oPositionNumbers.includes("5") && oPositionNumbers.includes("8")  
     ||  oPositionNumbers.includes("9") && oPositionNumbers.includes("6") && oPositionNumbers.includes("3")) {
 
-        console.log("O WINS!!!!!");
+    gameOver();
+
+    var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
+    
+    return religionWins;
+
     }
-        
     
 }
 
