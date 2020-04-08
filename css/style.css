@@ -84,3 +84,8 @@ h1 {
 .winner-text {
 
 }
+
+button {
+    width: 100px;
+    height: 100px
+}
