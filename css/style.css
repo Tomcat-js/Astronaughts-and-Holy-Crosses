@@ -3,12 +3,16 @@
 }
 
 .square {
-    border: 2px solid black;
+    border: 2px solid white;
     width: 150px;
     height: 150px;
     padding-top: 20px;
 }
 
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/galaxy.png);
+    background-position: top;
+}
 
 
 .board {
@@ -22,8 +26,10 @@
 
 
 h1 {
-    color: blue;
+    color: white;
+    font-size: 200%;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .neck {
@@ -93,7 +99,7 @@ h1 {
 
 
 .winner-text {
-
+    color: white;
 }
 
 header {
@@ -107,9 +113,20 @@ button {
 }
 
 .pick-a-side {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: lighter;
     
 }
 
 .un-clickable {
     pointer-events: none;
+}
+
+.addPadding {
+    padding-bottom: 47px;
+}
+
+.remove-text {
+    display: none;
 }

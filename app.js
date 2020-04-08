@@ -5,6 +5,10 @@ var religionButton = document.querySelector('.religion');
 
 var squares = document.querySelectorAll('.square');
 
+var pickAsideText = document.querySelector('.pick-a-side');
+
+var title = document.querySelector('.title');
+
 var X = "X";
 var O = "O";
 var turnCount = 0;
@@ -17,7 +21,7 @@ var winningRows = [1, 2, 3];
 var gameOver = function() {
     for (var i = 0; i < squares.length; i++) {
         if (squares[i].className !== "fire" || squares[i].className !== "background") {
-            squares[i].style.backgroundColor = "lightgrey";
+            squares[i].style.backgroundColor = "black";
             squares[i].classList.add('un-clickable');
         }
     }
@@ -224,6 +228,8 @@ var playForScience = function() {
 
     religionButton.disabled = true;
     scienceButton.disabled = true;
+    pickAsideText.classList.add('remove-text');
+    title.classList.add('addPadding');
     
     for (var i = 0; i < squares.length; i++) {
         squares[i].addEventListener('click', firstTurnScience, { once: true })
@@ -234,6 +240,8 @@ var playForReligion = function() {
     
     religionButton.disabled = true;
     scienceButton.disabled = true;
+    pickAsideText.classList.add('remove-text');
+    title.classList.add('addPadding');
 
     for (var i = 0; i < squares.length; i++) {
         squares[i].addEventListener('click', firstTurnReligion, { once: true })
