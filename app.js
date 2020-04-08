@@ -9,6 +9,7 @@ var pickAsideText = document.querySelector('.pick-a-side');
 
 var title = document.querySelector('.title');
 
+
 var X = "X";
 var O = "O";
 var turnCount = 0;
@@ -228,6 +229,10 @@ var playForScience = function() {
 
     religionButton.disabled = true;
     scienceButton.disabled = true;
+
+    religionButton.classList.add('un-clickable');
+    scienceButton.classList.add('un-clickable');
+
     pickAsideText.classList.add('remove-text');
     title.classList.add('addPadding');
     
@@ -240,6 +245,10 @@ var playForReligion = function() {
     
     religionButton.disabled = true;
     scienceButton.disabled = true;
+
+    religionButton.classList.add('un-clickable');
+    scienceButton.classList.add('un-clickable');
+
     pickAsideText.classList.add('remove-text');
     title.classList.add('addPadding');
 
