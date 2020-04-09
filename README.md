@@ -17,6 +17,4 @@ Definitely enabling the game to be suitable for one player was the greatest chal
 
 ![The Flow](https://i.imgur.com/1ZuIvju.jpg)
 
-[The Game](https://i.imgur.com/LL5e0qm.png)
 
-https://i.imgur.com/LL5e0qm.png
