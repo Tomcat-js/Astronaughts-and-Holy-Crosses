@@ -2,7 +2,7 @@
 [Play Here](https://tomcat-js.github.io/Astronaughts-and-Holy-Crosses/)
  <hr /> 
 ## GA Software Engineering Immersive Project 1<hr /> 
-[Screenshot](https://i.imgur.com/LL5e0qm.png)
+![The Game](https://i.imgur.com/LL5e0qm.png)
 ### Brief <hr />
 Build a interactive tic tac toe game using HTML, CSS and Javascript.
 
@@ -16,3 +16,5 @@ Build a interactive tic tac toe game using HTML, CSS and Javascript.
 Definitely enabling the game to be suitable for one player was the greatest challenge. It was quite difficult to get the computer to randomly select an available space after the user takes their turn. It was also difficult to change clickable parameters to an un-clickable state when neccassary. 
 
 ![The Flow](https://i.imgur.com/1ZuIvju.jpg)
+
+https://i.imgur.com/LL5e0qm.png
