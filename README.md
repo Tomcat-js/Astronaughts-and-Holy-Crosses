@@ -15,3 +15,4 @@ Build a interactive tic tac toe game using HTML, CSS and Javascript.
 ### Key Challenges <hr />
 Definitely enabling the game to be suitable for one player was the greatest challenge. It was quite difficult to get the computer to randomly select an available space after the user takes their turn. It was also difficult to change clickable parameters to an un-clickable state when neccassary. 
 
+![The Flow](https://i.imgur.com/1ZuIvju.jpg)
