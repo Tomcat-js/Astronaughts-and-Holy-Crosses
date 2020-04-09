@@ -1,6 +1,5 @@
-console.log("test");
-
 var scienceButton = document.querySelector('.science');
+
 var religionButton = document.querySelector('.religion');
 
 var squares = document.querySelectorAll('.square');
@@ -10,15 +9,10 @@ var pickAsideText = document.querySelector('.pick-a-side');
 var title = document.querySelector('.title');
 
 
-var X = "X";
-var O = "O";
 var turnCount = 0;
 var xPositionNumbers = [];
 var oPositionNumbers = [];
 
-
-
-var winningRows = [1, 2, 3];
 
 var gameOver = function() {
     for (var i = 0; i < squares.length; i++) {
@@ -42,76 +36,66 @@ var gameOver = function() {
 var firstTurnScience = function(event) {
 
    
-        event.target.classList.add('background');
+    event.target.classList.add('background');
 
-        var nasaDiv = document.createElement("div");
-        event.target.appendChild(nasaDiv);
-        nasaDiv.classList.add('nasa');
-        nasaDiv.textContent = 'NASA';
+    var nasaDiv = document.createElement("div");
+    event.target.appendChild(nasaDiv);
+    nasaDiv.classList.add('nasa');
+    nasaDiv.textContent = 'NASA';
 
-        var helmetDiv = document.createElement("div");
-        event.target.appendChild(helmetDiv);
-        helmetDiv.classList.add('helmet');
-        
+    var helmetDiv = document.createElement("div");
+    event.target.appendChild(helmetDiv);
+    helmetDiv.classList.add('helmet');
+    
 
-        var screenDiv = document.createElement('div');
-        helmetDiv.appendChild(screenDiv);
-        screenDiv.classList.add('screen');
+    var screenDiv = document.createElement('div');
+    helmetDiv.appendChild(screenDiv);
+    screenDiv.classList.add('screen');
 
-        var shouldersDiv = document.createElement('div');
-        event.target.appendChild(shouldersDiv);
-        shouldersDiv.classList.add('shoulders');
+    var shouldersDiv = document.createElement('div');
+    event.target.appendChild(shouldersDiv);
+    shouldersDiv.classList.add('shoulders');
 
-        var neckDiv = document.createElement('div');
-        shouldersDiv.appendChild(neckDiv);
-        neckDiv.classList.add('neck');
+    var neckDiv = document.createElement('div');
+    shouldersDiv.appendChild(neckDiv);
+    neckDiv.classList.add('neck');
 
-        turnCount += 1;
-        console.log(event.target.id);
-        xPositionNumbers.push(event.target.id);
-        console.log(xPositionNumbers);
+    turnCount += 1;
 
+    xPositionNumbers.push(event.target.id);
 
-        aiTargetArray = [];
+    aiTargetArray = [];
 
 
-        for (var i = 0; i < squares.length; i++) {
-            if (squares[i].className === 'square') {
-                var aiTarget = squares[i].id;
-                aiTargetArray.push(aiTarget);
-                
-            }
+    for (var i = 0; i < squares.length; i++) {
+        if (squares[i].className === 'square') {
+            var aiTarget = squares[i].id;
+            aiTargetArray.push(aiTarget);     
         }
+    }
 
-        // console.log(aiTargetArray);
+    var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
 
-        var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
+    if (turnCount < 8) {
 
-        // console.log(typeof randomTarget);
-        if (turnCount < 8) {
-        document.getElementById(randomTarget).classList.add('fire');
-        document.getElementById(randomTarget).innerHTML = "&#10015";
+    document.getElementById(randomTarget).classList.add('fire');
+    document.getElementById(randomTarget).innerHTML = "&#10015";
 
-        turnCount += 1;
+    turnCount += 1;
 
-        console.log(turnCount);
+    oPositionNumbers.push(randomTarget);
 
-        
+    for (var i = 0; i < squares.length; i++) {
 
-        oPositionNumbers.push(randomTarget);
-
-        console.log(oPositionNumbers);
-
-        for (var i = 0; i < squares.length; i++) {
-            if (squares[i].className !== "square") {
-                
-                squares[i].classList.add('un-clickable');
-            }
+        if (squares[i].className !== "square") {
+            
+            squares[i].classList.add('un-clickable');
         }
-        }
+    }
+}
 
 
-    if (xPositionNumbers.includes("1") && xPositionNumbers.includes("2") && xPositionNumbers.includes("3")
+if (xPositionNumbers.includes("1") && xPositionNumbers.includes("2") && xPositionNumbers.includes("3")
     ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("4") && xPositionNumbers.includes("7")
     ||  xPositionNumbers.includes("7") && xPositionNumbers.includes("8") && xPositionNumbers.includes("9")
     ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("5") && xPositionNumbers.includes("9")
@@ -120,7 +104,7 @@ var firstTurnScience = function(event) {
     ||  xPositionNumbers.includes("2") && xPositionNumbers.includes("5") && xPositionNumbers.includes("8")  
     ||  xPositionNumbers.includes("9") && xPositionNumbers.includes("6") && xPositionNumbers.includes("3")) {
 
-    
+
     gameOver();
 
     var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
@@ -128,69 +112,58 @@ var firstTurnScience = function(event) {
     document.querySelector('.winner-text').classList.add('blinking');
 
     return scienceWins;
-    
-
-    
 
     } else if 
 
         (oPositionNumbers.includes("1") && oPositionNumbers.includes("2") && oPositionNumbers.includes("3")
-    ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("4") && oPositionNumbers.includes("7")
-    ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("8") && oPositionNumbers.includes("9")
-    ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("5") && oPositionNumbers.includes("9")
-    ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("5") && oPositionNumbers.includes("3")
-    ||  oPositionNumbers.includes("4") && oPositionNumbers.includes("5") && oPositionNumbers.includes("6")
-    ||  oPositionNumbers.includes("2") && oPositionNumbers.includes("5") && oPositionNumbers.includes("8")  
-    ||  oPositionNumbers.includes("9") && oPositionNumbers.includes("6") && oPositionNumbers.includes("3")) {
+        ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("4") && oPositionNumbers.includes("7")
+        ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("8") && oPositionNumbers.includes("9")
+        ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("5") && oPositionNumbers.includes("9")
+        ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("5") && oPositionNumbers.includes("3")
+        ||  oPositionNumbers.includes("4") && oPositionNumbers.includes("5") && oPositionNumbers.includes("6")
+        ||  oPositionNumbers.includes("2") && oPositionNumbers.includes("5") && oPositionNumbers.includes("8")  
+        ||  oPositionNumbers.includes("9") && oPositionNumbers.includes("6") && oPositionNumbers.includes("3")) {
 
-    gameOver();   
+        gameOver();   
 
-    var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
+        var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
 
-    document.querySelector('.winner-text').classList.add('blinking');
-    
-    return religionWins;
-    
-    
+        document.querySelector('.winner-text').classList.add('blinking');
+
+        return religionWins;
+
     }
 
     if (turnCount === 9) {
         gameOver();
-    }
-        
+    }      
     
 }
 
 var firstTurnReligion = function(event) {
 
+    event.target.classList.add('fire');    
+    event.target.innerHTML = "&#10015";
     
+    turnCount += 1;
 
-        event.target.classList.add('fire');    
-        event.target.innerHTML = "&#10015";
-        
-        turnCount += 1;
-        console.log(event.target.id);
-        oPositionNumbers.push(event.target.id);
-        console.log(oPositionNumbers);
+    oPositionNumbers.push(event.target.id);
 
+    aiTargetArray = [];
 
-        aiTargetArray = [];
+    for (var i = 0; i < squares.length; i++) {
 
+        if (squares[i].className === 'square') {
 
-        for (var i = 0; i < squares.length; i++) {
-            if (squares[i].className === 'square') {
-                var aiTarget = squares[i].id;
-                aiTargetArray.push(aiTarget);
-                
-            }
+            var aiTarget = squares[i].id;
+            aiTargetArray.push(aiTarget);
+            
         }
+    }
 
-        // console.log(aiTargetArray);
+    var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
 
-        var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
-
-        // console.log(typeof randomTarget);
-        if (turnCount < 8) {
+    if (turnCount < 8) {
 
         document.getElementById(randomTarget).classList.add('background');
 
@@ -216,74 +189,64 @@ var firstTurnReligion = function(event) {
         neckDiv.classList.add('neck');
 
         turnCount += 1;
-
-        console.log(turnCount);
-
-        
-
+    
         xPositionNumbers.push(randomTarget);
 
-        console.log(oPositionNumbers);
-        }
-        
-        for (var i = 0; i < squares.length; i++) {
-            if (squares[i].className !== "square") {
-                
-                squares[i].classList.add('un-clickable');
-            }
-        }
-
+    }
     
+    for (var i = 0; i < squares.length; i++) {
+        if (squares[i].className !== "square") {
+            
+            squares[i].classList.add('un-clickable');
+        }
+    }
 
 
     if (xPositionNumbers.includes("1") && xPositionNumbers.includes("2") && xPositionNumbers.includes("3")
-    ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("4") && xPositionNumbers.includes("7")
-    ||  xPositionNumbers.includes("7") && xPositionNumbers.includes("8") && xPositionNumbers.includes("9")
-    ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("5") && xPositionNumbers.includes("9")
-    ||  xPositionNumbers.includes("7") && xPositionNumbers.includes("5") && xPositionNumbers.includes("3")
-    ||  xPositionNumbers.includes("4") && xPositionNumbers.includes("5") && xPositionNumbers.includes("6")
-    ||  xPositionNumbers.includes("2") && xPositionNumbers.includes("5") && xPositionNumbers.includes("8")  
-    ||  xPositionNumbers.includes("9") && xPositionNumbers.includes("6") && xPositionNumbers.includes("3")) {
+        ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("4") && xPositionNumbers.includes("7")
+        ||  xPositionNumbers.includes("7") && xPositionNumbers.includes("8") && xPositionNumbers.includes("9")
+        ||  xPositionNumbers.includes("1") && xPositionNumbers.includes("5") && xPositionNumbers.includes("9")
+        ||  xPositionNumbers.includes("7") && xPositionNumbers.includes("5") && xPositionNumbers.includes("3")
+        ||  xPositionNumbers.includes("4") && xPositionNumbers.includes("5") && xPositionNumbers.includes("6")
+        ||  xPositionNumbers.includes("2") && xPositionNumbers.includes("5") && xPositionNumbers.includes("8")  
+        ||  xPositionNumbers.includes("9") && xPositionNumbers.includes("6") && xPositionNumbers.includes("3")) {
 
-    gameOver();
+        gameOver();
 
-    var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
+        var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
 
-    document.querySelector('.winner-text').classList.add('blinking');
+        document.querySelector('.winner-text').classList.add('blinking');
 
-    return scienceWins;
-   
-
-
-    } else if 
-
-        (oPositionNumbers.includes("1") && oPositionNumbers.includes("2") && oPositionNumbers.includes("3")
-    ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("4") && oPositionNumbers.includes("7")
-    ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("8") && oPositionNumbers.includes("9")
-    ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("5") && oPositionNumbers.includes("9")
-    ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("5") && oPositionNumbers.includes("3")
-    ||  oPositionNumbers.includes("4") && oPositionNumbers.includes("5") && oPositionNumbers.includes("6")
-    ||  oPositionNumbers.includes("2") && oPositionNumbers.includes("5") && oPositionNumbers.includes("8")  
-    ||  oPositionNumbers.includes("9") && oPositionNumbers.includes("6") && oPositionNumbers.includes("3")) {
-
-    gameOver();
-
-    var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
-
-    document.querySelector('.winner-text').classList.add('blinking');
+        return scienceWins;
     
-    return religionWins;
 
-    }
+
+        } else if 
+
+            (oPositionNumbers.includes("1") && oPositionNumbers.includes("2") && oPositionNumbers.includes("3")
+            ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("4") && oPositionNumbers.includes("7")
+            ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("8") && oPositionNumbers.includes("9")
+            ||  oPositionNumbers.includes("1") && oPositionNumbers.includes("5") && oPositionNumbers.includes("9")
+            ||  oPositionNumbers.includes("7") && oPositionNumbers.includes("5") && oPositionNumbers.includes("3")
+            ||  oPositionNumbers.includes("4") && oPositionNumbers.includes("5") && oPositionNumbers.includes("6")
+            ||  oPositionNumbers.includes("2") && oPositionNumbers.includes("5") && oPositionNumbers.includes("8")  
+            ||  oPositionNumbers.includes("9") && oPositionNumbers.includes("6") && oPositionNumbers.includes("3")) {
+
+            gameOver();
+
+            var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
+
+            document.querySelector('.winner-text').classList.add('blinking');
+            
+            return religionWins;
+
+            }
 
     if (turnCount === 9) {
         gameOver();
     }
     
 }
-
-console.log(turnCount);
-
 
 
 var playForScience = function() {
@@ -330,24 +293,3 @@ religionButton.addEventListener('click', playForReligion);
 
 
 
-// var testArray1 = [1, 2, 3];
-// var testArray2 = "123";
-
-// if (testArray1.includes(2) && testArray1.includes(3)) {
-//     console.log("Test worked!")
-// }
-
-// console.log(testArray1.join(''));
-
-// var randomNum = console.log(Math.floor(Math.random() * 9));
-
-// var stringNum = '' + randomNum;
-
-// console.log(stringNum);
-
-// var randomNum = Math.ceil(Math.random() * 9);
-
-// console.log(randomNum);
-
-
-console.log(squares);
