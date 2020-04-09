@@ -17,6 +17,7 @@ var xPositionNumbers = [];
 var oPositionNumbers = [];
 
 
+
 var winningRows = [1, 2, 3];
 
 var gameOver = function() {
@@ -26,6 +27,13 @@ var gameOver = function() {
             squares[i].classList.add('un-clickable');
         }
     }
+    var resetButton = document.createElement('BUTTON');
+    resetButton.innerHTML = "PLAY AGAIN?";
+    document.querySelector('.header').appendChild(resetButton);
+    scienceButton.remove();
+    religionButton.remove();
+    resetButton.classList.add('btn');
+    resetButton.addEventListener('click', playAgain);
 }
 
 
@@ -36,9 +44,15 @@ var firstTurnScience = function(event) {
         
         event.target.classList.add('background');
 
+        var nasaDiv = document.createElement("div");
+        event.target.appendChild(nasaDiv);
+        nasaDiv.classList.add('nasa');
+        nasaDiv.textContent = 'NASA';
+
         var helmetDiv = document.createElement("div");
         event.target.appendChild(helmetDiv);
         helmetDiv.classList.add('helmet');
+        
 
         var screenDiv = document.createElement('div');
         helmetDiv.appendChild(screenDiv);
@@ -73,7 +87,7 @@ var firstTurnScience = function(event) {
         var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
 
         // console.log(typeof randomTarget);
-        if (turnCount < 9) {
+        if (turnCount < 8) {
         document.getElementById(randomTarget).classList.add('fire');
         document.getElementById(randomTarget).innerHTML = "&#10015";
 
@@ -103,6 +117,8 @@ var firstTurnScience = function(event) {
 
     var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
 
+    document.querySelector('.winner-text').classList.add('blinking');
+
     return scienceWins;
     
 
@@ -122,10 +138,16 @@ var firstTurnScience = function(event) {
     gameOver();   
 
     var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
+
+    document.querySelector('.winner-text').classList.add('blinking');
     
     return religionWins;
     
     
+    }
+
+    if (turnCount === 9) {
+        gameOver();
     }
         
     
@@ -160,9 +182,14 @@ var firstTurnReligion = function(event) {
         var randomTarget = aiTargetArray[Math.floor(Math.random() * aiTargetArray.length)];
 
         // console.log(typeof randomTarget);
-        if (turnCount < 9) {
+        if (turnCount < 8) {
+
         document.getElementById(randomTarget).classList.add('background');
-       
+
+        var nasaDiv = document.createElement("div");
+        document.getElementById(randomTarget).appendChild(nasaDiv);
+        nasaDiv.classList.add('nasa');
+        nasaDiv.textContent = 'NASA';
 
         var helmetDiv = document.createElement("div");
         document.getElementById(randomTarget).appendChild(helmetDiv);
@@ -208,6 +235,8 @@ var firstTurnReligion = function(event) {
 
     var scienceWins = document.querySelector('.winner-text').textContent = "SCIENCE WINS!!!";
 
+    document.querySelector('.winner-text').classList.add('blinking');
+
     return scienceWins;
    
 
@@ -226,9 +255,15 @@ var firstTurnReligion = function(event) {
     gameOver();
 
     var religionWins = document.querySelector('.winner-text').textContent = "RELIGION WINS!!!";
+
+    document.querySelector('.winner-text').classList.add('blinking');
     
     return religionWins;
 
+    }
+
+    if (turnCount === 9) {
+        gameOver();
     }
     
 }
@@ -269,9 +304,15 @@ var playForReligion = function() {
     }
 }
 
+var playAgain = function() {
+    location.reload();
+}
+
 
 scienceButton.addEventListener('click', playForScience);
 religionButton.addEventListener('click', playForReligion);
+
+
 
 
 

@@ -25,12 +25,26 @@ body {
     margin-top: 40px;
 }
 
+.nasa {
+    font-size: 10%;
+    color: red;
+    position: absolute;
+    margin-left: 60px;
+    
+    
+    
+}
+
 
 h1 {
-    color: white;
+    color: red;
     font-size: 200%;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
+}
+
+span {
+    color: white;
 }
 
 .neck {
@@ -87,12 +101,11 @@ h1 {
 
 @media (max-width: 1200px) {
     .wrapper {
-        border: 2px solid black;
         padding-right: 300px;
     }
 
     header {
-        padding-left: 50%;
+        padding-left: 45%;
     }
     
 }
@@ -101,9 +114,21 @@ h1 {
 
 .winner-text {
     color: white;
+    font-family: 'Orbitron', sans-serif;
 }
 
-header {
+.blinking{
+    animation:blinkingText 0.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: red;    }
+    49%{    color:white }
+    60%{    color: red; }
+    99%{    color:white;  }
+    100%{   color: red;    }
+}
+
+.header {
     text-align: center;
 }
 
