@@ -41,7 +41,7 @@ var gameOver = function() {
 
 var firstTurnScience = function(event) {
 
-        
+   
         event.target.classList.add('background');
 
         var nasaDiv = document.createElement("div");
@@ -70,6 +70,7 @@ var firstTurnScience = function(event) {
         console.log(event.target.id);
         xPositionNumbers.push(event.target.id);
         console.log(xPositionNumbers);
+
 
         aiTargetArray = [];
 
@@ -100,6 +101,13 @@ var firstTurnScience = function(event) {
         oPositionNumbers.push(randomTarget);
 
         console.log(oPositionNumbers);
+
+        for (var i = 0; i < squares.length; i++) {
+            if (squares[i].className !== "square") {
+                
+                squares[i].classList.add('un-clickable');
+            }
+        }
         }
 
 
@@ -218,6 +226,12 @@ var firstTurnReligion = function(event) {
         console.log(oPositionNumbers);
         }
         
+        for (var i = 0; i < squares.length; i++) {
+            if (squares[i].className !== "square") {
+                
+                squares[i].classList.add('un-clickable');
+            }
+        }
 
     
 
@@ -336,3 +350,4 @@ religionButton.addEventListener('click', playForReligion);
 // console.log(randomNum);
 
 
+console.log(squares);
