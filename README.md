@@ -2,7 +2,7 @@
 [Play Here](https://tomcat-js.github.io/Astronaughts-and-Holy-Crosses/)
  <hr /> 
 ## GA Software Engineering Immersive Project 1<hr /> 
-![Screenshot](https://i.imgur.com/LL5e0qm.png)
+[Screenshot](https://i.imgur.com/LL5e0qm.png)
 ### Brief <hr />
 Build a interactive tic tac toe game using HTML, CSS and Javascript.
 
