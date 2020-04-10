@@ -4,7 +4,7 @@
 ## GA Software Engineering Immersive Project 1<hr /> 
 
 ### Brief <hr />
-Build a interactive tic tac toe game using HTML, CSS and Javascript.
+Build an interactive tic tac toe game using HTML, CSS and Javascript.
 
 ### Features <hr />
 - Playable for either side
