@@ -7,7 +7,6 @@
 Build a interactive tic tac toe game using HTML, CSS and Javascript.
 
 ### Features <hr />
-- Responsive design
 - Playable for either side
 - One player enabled 
 - Amusing theme for light comedy value
