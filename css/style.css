@@ -17,7 +17,7 @@ body {
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 25%; 
+    width: 450px; 
     margin: 0 auto;
     text-align: center;
     font-size: 100px;
@@ -95,7 +95,7 @@ span {
     background-size: cover;  
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1000px) {
     .wrapper {
         padding-right: 300px;
     }
@@ -103,7 +103,7 @@ span {
     header {
         padding-left: 45%;
     }   
-}
+} */
 
 .winner-text {
     color: white;
