@@ -95,16 +95,6 @@ span {
     background-size: cover;  
 }
 
-/* @media (max-width: 1000px) {
-    .wrapper {
-        padding-right: 300px;
-    }
-
-    header {
-        padding-left: 45%;
-    }   
-} */
-
 .winner-text {
     color: white;
     font-family: 'Orbitron', sans-serif;
@@ -130,6 +120,7 @@ span {
     transition-duration: 0.2s;
     width: 70px;
     height: 60px;
+    border-radius: 2%;
     margin: 0 auto;
     font-size: 80%;
     font-family: 'Orbitron', sans-serif;
