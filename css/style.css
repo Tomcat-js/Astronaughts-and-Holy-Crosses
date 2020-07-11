@@ -118,14 +118,12 @@ span {
 
 .btn {
     transition-duration: 0.2s;
-    width: 70px;
     height: 60px;
     border-radius: 2%;
     margin: 0 auto;
-    font-size: 80%;
+    font-size: 100%;
     font-family: 'Orbitron', sans-serif;
     background-color: white;
-    text-align: left;
 }
 
 .btn:hover {
