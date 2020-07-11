@@ -150,5 +150,46 @@ span {
     display: none;
 }
 
+@media only screen and (max-device-width: 480px) {
+    .square {
+        border: 2px solid white;
+        width: 75px;
+        height: 75px;
+        padding-top: 10px;
+    }
 
+    .board {
+        width: 225px; 
+    }
+
+    .helmet {
+        width: 55px;
+        height: 55px;
+        padding-top: 4.5px;
+    }
+
+    .shoulders {
+        border-top: 3px solid black;
+        height: 8px;
+    }
+
+    .neck {
+        height: 8px;
+    }
+
+    .screen {
+        height: 35px;
+        width: 40px;
+    }
+
+    .nasa {
+        font-size: 5%;
+        margin-left: 30px;
+        margin-top: 1px;   
+    }
+    .fire {
+        font-size: 50px;
+    }
+    
+}
 
